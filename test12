@@ -122,7 +122,7 @@ end
 
 Booths_Broadcast.OnClientEvent:Connect(function(username, message)
 	if type(message) == "table" then
-		local highestTimestamp = 3.16 -- Initialize with the smallest possible number
+		local highestTimestamp = 3.1 -- Initialize with the smallest possible number
 		local key = nil
 		local listing = nil
         for v, value in pairs(message["Listings"] or {}) do
