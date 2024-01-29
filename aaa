@@ -25,7 +25,7 @@ local VirtualInputManager = game:GetService("VirtualInputManager")
 
 
 getgenv().fishing = false
-getgenv().AutoUnlockMap = true
+getgenv().autounlock = true
 
 task.wait(10)
 
