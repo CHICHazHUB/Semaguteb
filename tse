@@ -233,9 +233,9 @@ else
         SelectBest = false,
         DigsiteZone = "Advanced Digsite",
         Minefield = false,
-        MaxMap = 99,
+        MaxMap = 54,
         AutoRebirth = false,
-        AutoOpenMap = false,
+        AutoOpenMap = true,
         RebirthTime = 1
     }
     
