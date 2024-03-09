@@ -1,0 +1,206 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "CHiChAzHUB",
+    LoadingTitle = "CHiChAzHUB",
+    LoadingSubtitle = "by ChicHAz",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "CHiChAzHUB"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "sirius", -- The Discord invite code, do not include discord.gg/
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "CHiChAzHUB",
+       Subtitle = "Key System",
+       Note = "Join the discord (discord.gg/7FRdCNJjxW)",
+       FileName = "SiriusKey",
+       SaveKey = true,
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = "Madi"
+    }
+ })
+
+ local Tab = Window:CreateTab("Plant Options", 4483362458) -- Title, Image
+
+ local Section = Tab:CreateSection("Plant Options",true) -- The 2nd argument is to tell if its only a Title and doesnt contain elements
+
+ local Button = Tab:CreateButton({
+    Name = "Tp to Garden",
+    Info = "", -- Speaks for itself, Remove if none.
+    Interact = 'Changable',
+    Callback = function()
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(176.87, 23.35, 1993.71)
+    end,
+ })
+
+ local Button = Tab:CreateButton({
+    Name = "Send Gem Script",
+    Info = "", -- Speaks for itself, Remove if none.
+    Interact = 'Changable',
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CHICHazHUB/HUB/main/HSG"))()
+    end,
+ })
+
+ local Button = Tab:CreateButton({
+    Name = "AFK",
+    Info = "", -- Speaks for itself, Remove if none.
+    Interact = 'Changable',
+    Callback = function(v)
+        getgenv().AFK = v
+        local VirtualInputManager = game:GetService("VirtualInputManager")
+        if v == true then
+            while getgenv().AFK do
+            VirtualInputManager:SendKeyEvent(true, "Space", false, game)
+            task.wait(.2)
+            VirtualInputManager:SendKeyEvent(false, "Space", false, game)
+            task.wait(300)
+            end
+        end
+    end,
+ })
+
+ local Toggle = Tab:CreateToggle({
+    Name = "Collect LootBags",
+    Info = "Toggle info/Description.", -- Speaks for itself, Remove if none.
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(v)
+        getgenv().AFK = v
+        if v == true then
+            while getgenv().AFK do
+                local OrbRemote = game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Orbs: Collect")
+                local LootbagRemote = game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Lootbags_Claim")
+                local OrbFolder = workspace:WaitForChild("THINGS"):WaitForChild("Orbs")
+                local LootbagFolder = workspace:WaitForChild("__THINGS"):WaitForChild("Lootbags")
+                 
+                OrbFolder.ChildAdded:Connect(function(Orb)
+                    task.wait(1.5)
+                    Orb:PivotTo(HRP.CFrame)
+                    OrbRemote:FireServer({Orb.Name})
+                    task.wait()
+                    Orb:Destroy()
+                end)
+                LootbagFolder.ChildAdded:Connect(function(Lootbag)
+                    task.wait(4)
+                    Lootbag:PivotTo(HRP.CFrame)
+                    LootbagRemote:FireServer({Lootbag.Name})
+                    task.wait()
+                    Lootbag:Destroy()
+                end)
+         end
+        end
+    end,
+ })
+
+ local Toggle = Tab:CreateToggle({
+    Name = "WaterPlant",
+    Info = "Toggle info/Description.", -- Speaks for itself, Remove if none.
+    CurrentValue = false,
+    Flag = "waterplantFlag", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(v)
+        getgenv().waterPlant = v
+            if v == true then
+                while getgenv().waterPlant do
+    local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
+    local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
+    local result = saveModule.Get()
+    local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
+    local Lib = require(game.ReplicatedStorage:WaitForChild("Library").Client)
+    local Lib_ = require(game.ReplicatedStorage:WaitForChild("Library"))
+    local HttpService = game:GetService("HttpService")
+
+ local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 1, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 1)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 1)
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 2, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 2)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 2)
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 3, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 3)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 3)
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 4, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 4)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 4)
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 5, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 5)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 5)
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 6, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 6)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 6)
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 7, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 7)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 7)
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 8, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 8)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 8)
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 9, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 9)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 9)
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 10, "Diamond")
+ Remote:InvokeServer("FlowerGarden", "WaterSeed", 10)
+ Remote:InvokeServer("FlowerGarden", "ClaimPlant", 10)
+                end
+        end
+    end,
+ })
+
+ local Toggle = Tab:CreateToggle({
+    Name = "InstaPlant",
+    Info = "Toggle info/Description.", -- Speaks for itself, Remove if none.
+    CurrentValue = false,
+    Flag = "waterplantFlag", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(v)
+        getgenv().instaPlant = v
+            if v == true then
+                while getgenv().instaPlant do
+    local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
+    local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
+    local result = saveModule.Get()
+    local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
+    local Lib = require(game.ReplicatedStorage:WaitForChild("Library").Client)
+    local Lib_ = require(game.ReplicatedStorage:WaitForChild("Library"))
+    local HttpService = game:GetService("HttpService")
+
+ local Remote = game.ReplicatedStorage.Network.Instancing_InvokeCustomFromClient
+ Remote:InvokeServer("FlowerGarden", "PlantSeed", 1, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 1)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 1)
+                      Remote:InvokeServer("FlowerGarden", "PlantSeed", 2, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 2)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 2)
+                      Remote:InvokeServer("FlowerGarden", "PlantSeed", 3, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 3)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 3)
+                      Remote:InvokeServer("FlowerGarden", "PlantSeed", 4, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 4)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 4)
+                      Remote:InvokeServer("FlowerGarden", "PlantSeed", 5, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 5)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 5)
+                      Remote:InvokeServer("FlowerGarden", "PlantSeed", 6, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 6)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 6)
+                      Remote:InvokeServer("FlowerGarden", "PlantSeed", 7, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 7)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 7)
+                      Remote:InvokeServer("FlowerGarden", "PlantSeed", 8, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 8)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 8)
+                      Remote:InvokeServer("FlowerGarden", "PlantSeed", 9, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 9)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 9)
+                      Remote:InvokeServer("FlowerGarden", "PlantSeed", 10, "Diamond")
+                      Remote:InvokeServer("FlowerGarden", "InstaGrowSeed", 10)
+                      Remote:InvokeServer("FlowerGarden", "ClaimPlant", 10)
+                end
+        end
+    end,
+ })
